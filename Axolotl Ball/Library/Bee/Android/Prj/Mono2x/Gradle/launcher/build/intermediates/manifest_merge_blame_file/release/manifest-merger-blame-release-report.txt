@@ -1,0 +1,230 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.DefaultCompany.AxolotlBall"
+4    android:installLocation="preferExternal"
+5    android:versionCode="1"
+6    android:versionName="1.0" >
+7
+8    <uses-sdk
+9        android:minSdkVersion="22"
+9-->C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml
+10        android:targetSdkVersion="32" />
+10-->C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml
+11
+12    <supports-screens
+12-->C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:4:3-163
+13        android:anyDensity="true"
+13-->C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:4:135-160
+14        android:largeScreens="true"
+14-->C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:4:78-105
+15        android:normalScreens="true"
+15-->C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:4:49-77
+16        android:smallScreens="true"
+16-->C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:4:21-48
+17        android:xlargeScreens="true" />
+17-->C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:4:106-134
+18
+19    <uses-permission android:name="android.permission.INTERNET" />
+19-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:10:5-67
+19-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:10:22-64
+20    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+20-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:11:5-79
+20-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:11:22-76
+21
+22    <uses-feature android:glEsVersion="0x00030000" />
+22-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:13:5-54
+22-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:13:19-51
+23    <uses-feature
+23-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:14:5-16:36
+24        android:name="android.hardware.vulkan.version"
+24-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:15:9-55
+25        android:required="false" />
+25-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:16:9-33
+26    <uses-feature
+26-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:17:5-19:36
+27        android:name="android.hardware.touchscreen"
+27-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:18:9-52
+28        android:required="false" />
+28-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:19:9-33
+29    <uses-feature
+29-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:20:5-22:36
+30        android:name="android.hardware.touchscreen.multitouch"
+30-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:21:9-63
+31        android:required="false" />
+31-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:22:9-33
+32    <uses-feature
+32-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:23:5-25:36
+33        android:name="android.hardware.touchscreen.multitouch.distinct"
+33-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:24:9-72
+34        android:required="false" />
+34-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:25:9-33
+35
+36    <uses-permission android:name="com.android.vending.BILLING" />
+36-->[:billing-5.1.0:] C:\Users\Chris\.gradle\caches\transforms-3\c28743ae4beba7e25593a8a754aa1c07\transformed\billing-5.1.0\AndroidManifest.xml:10:5-67
+36-->[:billing-5.1.0:] C:\Users\Chris\.gradle\caches\transforms-3\c28743ae4beba7e25593a8a754aa1c07\transformed\billing-5.1.0\AndroidManifest.xml:10:22-64
+37    <!--
+38    This has been added to conform with requirement from Android 11 (API level 30) onwards
+39    (http://screen/9iGdBMRWDmVbRJ6), after getting confirmation in http://yaqs/995038231927980032#a1
+40    -->
+41    <queries>
+41-->[:billing-5.1.0:] C:\Users\Chris\.gradle\caches\transforms-3\c28743ae4beba7e25593a8a754aa1c07\transformed\billing-5.1.0\AndroidManifest.xml:16:5-20:15
+42        <intent>
+42-->[:billing-5.1.0:] C:\Users\Chris\.gradle\caches\transforms-3\c28743ae4beba7e25593a8a754aa1c07\transformed\billing-5.1.0\AndroidManifest.xml:17:9-19:18
+43            <action android:name="com.android.vending.billing.InAppBillingService.BIND" />
+43-->[:billing-5.1.0:] C:\Users\Chris\.gradle\caches\transforms-3\c28743ae4beba7e25593a8a754aa1c07\transformed\billing-5.1.0\AndroidManifest.xml:18:13-91
+43-->[:billing-5.1.0:] C:\Users\Chris\.gradle\caches\transforms-3\c28743ae4beba7e25593a8a754aa1c07\transformed\billing-5.1.0\AndroidManifest.xml:18:21-88
+44        </intent>
+45    </queries>
+46
+47    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+47-->[:UnityAds:] C:\Users\Chris\.gradle\caches\transforms-3\adbf08521aa54dfca53a73706143af76\transformed\UnityAds\AndroidManifest.xml:11:5-79
+47-->[:UnityAds:] C:\Users\Chris\.gradle\caches\transforms-3\adbf08521aa54dfca53a73706143af76\transformed\UnityAds\AndroidManifest.xml:11:22-76
+48
+49    <application
+49-->C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:3:3-83
+50        android:extractNativeLibs="true"
+50-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:27:18-50
+51        android:icon="@mipmap/app_icon"
+51-->C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:3:49-80
+52        android:label="@string/app_name" >
+52-->C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:3:16-48
+53        <meta-data
+53-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:28:9-30:33
+54            android:name="unity.splash-mode"
+54-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:29:13-45
+55            android:value="0" />
+55-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:30:13-30
+56        <meta-data
+56-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:31:9-33:36
+57            android:name="unity.splash-enable"
+57-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:32:13-47
+58            android:value="True" />
+58-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:33:13-33
+59        <meta-data
+59-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:34:9-36:36
+60            android:name="unity.launch-fullscreen"
+60-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:35:13-51
+61            android:value="True" />
+61-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:36:13-33
+62        <meta-data
+62-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:37:9-39:37
+63            android:name="unity.allow-resizable-window"
+63-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:38:13-56
+64            android:value="False" />
+64-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:39:13-34
+65        <meta-data
+65-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:40:9-42:50
+66            android:name="notch.config"
+66-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:41:13-40
+67            android:value="portrait|landscape" />
+67-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:42:13-47
+68        <meta-data
+68-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:43:9-45:36
+69            android:name="unity.auto-report-fully-drawn"
+69-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:44:13-57
+70            android:value="true" />
+70-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:45:13-33
+71
+72        <activity
+72-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:47:9-68:20
+73            android:name="com.unity3d.player.UnityPlayerActivity"
+73-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:48:13-66
+74            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
+74-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:49:13-194
+75            android:exported="true"
+75-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:50:13-36
+76            android:hardwareAccelerated="false"
+76-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:51:13-48
+77            android:launchMode="singleTask"
+77-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:52:13-44
+78            android:resizeableActivity="false"
+78-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:53:13-47
+79            android:screenOrientation="fullUser"
+79-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:54:13-49
+80            android:theme="@style/UnityThemeSelector" >
+80-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:55:13-54
+81            <intent-filter>
+81-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:56:13-60:29
+82                <category android:name="android.intent.category.LAUNCHER" />
+82-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:57:17-77
+82-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:57:27-74
+83
+84                <action android:name="android.intent.action.MAIN" />
+84-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:59:17-69
+84-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:59:25-66
+85            </intent-filter>
+86
+87            <meta-data
+87-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:62:13-64:40
+88                android:name="unityplayer.UnityActivity"
+88-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:63:17-57
+89                android:value="true" />
+89-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:64:17-37
+90            <meta-data
+90-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:65:13-67:40
+91                android:name="notch_support"
+91-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:66:17-45
+92                android:value="true" />
+92-->[:unityLibrary] C:\Users\Chris\Documents\code\Game Development\axolotl-ball\Axolotl Ball\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:67:17-37
+93        </activity>
+94
+95        <meta-data
+95-->[:billing-5.1.0:] C:\Users\Chris\.gradle\caches\transforms-3\c28743ae4beba7e25593a8a754aa1c07\transformed\billing-5.1.0\AndroidManifest.xml:23:9-25:37
+96            android:name="com.google.android.play.billingclient.version"
+96-->[:billing-5.1.0:] C:\Users\Chris\.gradle\caches\transforms-3\c28743ae4beba7e25593a8a754aa1c07\transformed\billing-5.1.0\AndroidManifest.xml:24:13-73
+97            android:value="5.1.0" />
+97-->[:billing-5.1.0:] C:\Users\Chris\.gradle\caches\transforms-3\c28743ae4beba7e25593a8a754aa1c07\transformed\billing-5.1.0\AndroidManifest.xml:25:13-34
+98
+99        <activity
+99-->[:billing-5.1.0:] C:\Users\Chris\.gradle\caches\transforms-3\c28743ae4beba7e25593a8a754aa1c07\transformed\billing-5.1.0\AndroidManifest.xml:27:9-31:75
+100            android:name="com.android.billingclient.api.ProxyBillingActivity"
+100-->[:billing-5.1.0:] C:\Users\Chris\.gradle\caches\transforms-3\c28743ae4beba7e25593a8a754aa1c07\transformed\billing-5.1.0\AndroidManifest.xml:28:13-78
+101            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+101-->[:billing-5.1.0:] C:\Users\Chris\.gradle\caches\transforms-3\c28743ae4beba7e25593a8a754aa1c07\transformed\billing-5.1.0\AndroidManifest.xml:29:13-96
+102            android:exported="false"
+102-->[:billing-5.1.0:] C:\Users\Chris\.gradle\caches\transforms-3\c28743ae4beba7e25593a8a754aa1c07\transformed\billing-5.1.0\AndroidManifest.xml:30:13-37
+103            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+103-->[:billing-5.1.0:] C:\Users\Chris\.gradle\caches\transforms-3\c28743ae4beba7e25593a8a754aa1c07\transformed\billing-5.1.0\AndroidManifest.xml:31:13-72
+104        <activity
+104-->[:UnityAds:] C:\Users\Chris\.gradle\caches\transforms-3\adbf08521aa54dfca53a73706143af76\transformed\UnityAds\AndroidManifest.xml:14:9-18:74
+105            android:name="com.unity3d.services.ads.adunit.AdUnitActivity"
+105-->[:UnityAds:] C:\Users\Chris\.gradle\caches\transforms-3\adbf08521aa54dfca53a73706143af76\transformed\UnityAds\AndroidManifest.xml:15:13-74
+106            android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+106-->[:UnityAds:] C:\Users\Chris\.gradle\caches\transforms-3\adbf08521aa54dfca53a73706143af76\transformed\UnityAds\AndroidManifest.xml:16:13-170
+107            android:hardwareAccelerated="true"
+107-->[:UnityAds:] C:\Users\Chris\.gradle\caches\transforms-3\adbf08521aa54dfca53a73706143af76\transformed\UnityAds\AndroidManifest.xml:17:13-47
+108            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+108-->[:UnityAds:] C:\Users\Chris\.gradle\caches\transforms-3\adbf08521aa54dfca53a73706143af76\transformed\UnityAds\AndroidManifest.xml:18:13-71
+109        <activity
+109-->[:UnityAds:] C:\Users\Chris\.gradle\caches\transforms-3\adbf08521aa54dfca53a73706143af76\transformed\UnityAds\AndroidManifest.xml:19:9-23:86
+110            android:name="com.unity3d.services.ads.adunit.AdUnitTransparentActivity"
+110-->[:UnityAds:] C:\Users\Chris\.gradle\caches\transforms-3\adbf08521aa54dfca53a73706143af76\transformed\UnityAds\AndroidManifest.xml:20:13-85
+111            android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+111-->[:UnityAds:] C:\Users\Chris\.gradle\caches\transforms-3\adbf08521aa54dfca53a73706143af76\transformed\UnityAds\AndroidManifest.xml:21:13-170
+112            android:hardwareAccelerated="true"
+112-->[:UnityAds:] C:\Users\Chris\.gradle\caches\transforms-3\adbf08521aa54dfca53a73706143af76\transformed\UnityAds\AndroidManifest.xml:22:13-47
+113            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+113-->[:UnityAds:] C:\Users\Chris\.gradle\caches\transforms-3\adbf08521aa54dfca53a73706143af76\transformed\UnityAds\AndroidManifest.xml:23:13-83
+114        <activity
+114-->[:UnityAds:] C:\Users\Chris\.gradle\caches\transforms-3\adbf08521aa54dfca53a73706143af76\transformed\UnityAds\AndroidManifest.xml:24:9-28:86
+115            android:name="com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity"
+115-->[:UnityAds:] C:\Users\Chris\.gradle\caches\transforms-3\adbf08521aa54dfca53a73706143af76\transformed\UnityAds\AndroidManifest.xml:25:13-93
+116            android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+116-->[:UnityAds:] C:\Users\Chris\.gradle\caches\transforms-3\adbf08521aa54dfca53a73706143af76\transformed\UnityAds\AndroidManifest.xml:26:13-170
+117            android:hardwareAccelerated="false"
+117-->[:UnityAds:] C:\Users\Chris\.gradle\caches\transforms-3\adbf08521aa54dfca53a73706143af76\transformed\UnityAds\AndroidManifest.xml:27:13-48
+118            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+118-->[:UnityAds:] C:\Users\Chris\.gradle\caches\transforms-3\adbf08521aa54dfca53a73706143af76\transformed\UnityAds\AndroidManifest.xml:28:13-83
+119        <activity
+119-->[:UnityAds:] C:\Users\Chris\.gradle\caches\transforms-3\adbf08521aa54dfca53a73706143af76\transformed\UnityAds\AndroidManifest.xml:29:9-33:74
+120            android:name="com.unity3d.services.ads.adunit.AdUnitSoftwareActivity"
+120-->[:UnityAds:] C:\Users\Chris\.gradle\caches\transforms-3\adbf08521aa54dfca53a73706143af76\transformed\UnityAds\AndroidManifest.xml:30:13-82
+121            android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+121-->[:UnityAds:] C:\Users\Chris\.gradle\caches\transforms-3\adbf08521aa54dfca53a73706143af76\transformed\UnityAds\AndroidManifest.xml:31:13-170
+122            android:hardwareAccelerated="false"
+122-->[:UnityAds:] C:\Users\Chris\.gradle\caches\transforms-3\adbf08521aa54dfca53a73706143af76\transformed\UnityAds\AndroidManifest.xml:32:13-48
+123            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+123-->[:UnityAds:] C:\Users\Chris\.gradle\caches\transforms-3\adbf08521aa54dfca53a73706143af76\transformed\UnityAds\AndroidManifest.xml:33:13-71
+124    </application>
+125
+126</manifest>
