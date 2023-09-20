@@ -382,6 +382,7 @@
 "Assets/_GameControl/Scripts/MainMenuController.cs"
 "Assets/_GameControl/Scripts/PauseMenuController.cs"
 "Assets/_GameControl/Scripts/RestartLevel.cs"
+"Assets/_GameControl/Scripts/SoundManager.cs"
 -langversion:9.0
 
 /deterministic
