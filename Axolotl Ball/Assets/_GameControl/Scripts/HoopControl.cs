@@ -19,6 +19,7 @@ public class HoopControl : MonoBehaviour
             other.GetComponent<BallController>().SetBallNatural();
             m_ScoreEffect.Play();
             CameraShake.Instance.TriggerShake();
+            SoundManager.instance.PlayScoreSound();
         }
     }
 }

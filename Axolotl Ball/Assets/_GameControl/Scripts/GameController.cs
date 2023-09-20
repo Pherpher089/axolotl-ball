@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -17,8 +18,21 @@ public class GameController : MonoBehaviour
     {
         Instance = this;
     }
+
+    public void Start()
+    {
+        if(SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            InitializeGame();
+            SoundManager.instance.PlayMusic(1, true);
+        } else
+        {
+            // play main menu music on start
+            SoundManager.instance.PlayMusic(0);
+        }
+    }
     // Start is called before the first frame update
-    void Start()
+    void InitializeGame()
     {
         ballTransform = GameObject.FindGameObjectWithTag("Ball").transform;
         winEffect = transform.GetChild(0).GetComponent<ParticleSystem>();
@@ -35,24 +49,9 @@ public class GameController : MonoBehaviour
         player2.GetComponent<SpriteRenderer>().color = playerColors[1];
 
     }
-    void CheckBallPosition()
-    {
-        Vector3 viewportPoint = Camera.main.WorldToViewportPoint(ballTransform.position);
-
-        if (IsOutsideView(viewportPoint))
-        {
-            winEffect.GetComponent<RestartLevel>().StartReset();
-        }
-    }
-    bool IsOutsideView(Vector3 viewportPoint)
-    {
-        return viewportPoint.x < 0 || viewportPoint.x > 1 || viewportPoint.y < 0 || viewportPoint.y > 1;
-    }
-
 
     public void Score(int playerNumber)
     {
-        Debug.Log("### score " + playerNumber);
         //number of blocks per score
         int _hoopScore = hoopScore;
         foreach (GameObject b in blocks)

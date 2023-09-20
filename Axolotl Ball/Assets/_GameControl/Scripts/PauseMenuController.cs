@@ -58,6 +58,7 @@ public class PauseMenuController : MonoBehaviour
     {
         if (Application.isPlaying)
         {
+            isPaused = false;
             SceneManager.LoadScene(currentScene.name);
         }
     }

@@ -9,7 +9,10 @@ public class CharacterUserControl : MonoBehaviour
 
     //mouse controls
     private Camera mainCamera;
-    public float m_SpeedModifier = 450f;
+    public float m_SpeedModifieTouch = 20f;
+    public float m_SpeedModifieMouse = 450f;
+    public float m_SpeedModifieAxis = 450f;
+
     public BoxCollider2D courtBounds;
     private float m_Acceleration = 10.0f; // Adjust this value for desired smoothness
     Vector2 touchInput;
@@ -36,30 +39,29 @@ public class CharacterUserControl : MonoBehaviour
         if(PauseMenuController.isPaused) return;
         //KeyboardInput();
         TouchInput();
+        MouseInput();
     }
 
     private void KeyboardInput()
     {
         Vector2 movementInput = new Vector2(Input.GetAxis(m_PlayerNumber.ToString() + "Horizontal"), Input.GetAxis(m_PlayerNumber.ToString() + "Vertical"));
-        Vector2 targetVelocity = movementInput * m_SpeedModifier;
+        Vector2 targetVelocity = movementInput * m_SpeedModifieAxis;
 
+        m_RigidBody2D.velocity = Vector2.Lerp(m_RigidBody2D.velocity, targetVelocity, m_Acceleration * Time.deltaTime);
+    }
+
+    public void MouseInput()
+    {
+        Vector2 targetVelocity = GetMouseDragDirection() * m_SpeedModifieMouse;
         m_RigidBody2D.velocity = Vector2.Lerp(m_RigidBody2D.velocity, targetVelocity, m_Acceleration * Time.deltaTime);
     }
 
     private void TouchInput()
     {
-        Vector2 targetVelocity = GetInputDirection() * m_SpeedModifier;
-        m_RigidBody2D.velocity = Vector2.Lerp(m_RigidBody2D.velocity, targetVelocity, m_Acceleration * Time.deltaTime);
-    }
-    private Vector2 GetInputDirection()
-    {
         if (Input.touchCount > 0)
         {
-            return GetTouchDragDirection();
-        }
-        else
-        {
-            return GetMouseDragDirection();
+            Vector2 targetVelocity = GetTouchDragDirection() * m_SpeedModifieTouch;
+            m_RigidBody2D.velocity = Vector2.Lerp(m_RigidBody2D.velocity, targetVelocity, m_Acceleration * Time.deltaTime);
         }
     }
 
