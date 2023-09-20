@@ -10,26 +10,32 @@ public class GameController : MonoBehaviour
     public Color[] playerColors;
     ParticleSystem winEffect;
     int hoopScore = 5;
-
+    StartCountDownController countDownController;
     //[HideInInspector]
     public List<GameObject> blocks;
     Transform ballTransform;
+    public bool allowCharacterMovement = false;
     void Awake()
     {
         Instance = this;
+        countDownController = GetComponent<StartCountDownController>();
     }
 
     public void Start()
     {
-        if(SceneManager.GetActiveScene().buildIndex == 1)
-        {
-            InitializeGame();
-            SoundManager.instance.PlayMusic(1, true);
-        } else
-        {
-            // play main menu music on start
-            SoundManager.instance.PlayMusic(0);
-        }
+        countDownController.OnCountdownComplete += StartMatch;
+        InitializeGame();
+        countDownController.StartCountdown();
+    }
+    void OnDestroy()
+    {
+        countDownController.OnCountdownComplete -= StartMatch;
+    }
+    public void StartMatch()
+    {
+        allowCharacterMovement = true;
+        SoundManager.instance.PlayMusic(1, true);
+        FindObjectOfType<BallController>().GetComponent<Rigidbody2D>().velocity = Vector2.down;
     }
     // Start is called before the first frame update
     void InitializeGame()
@@ -68,7 +74,8 @@ public class GameController : MonoBehaviour
         {
             winEffect.startColor = playerColors[playerNumber - 1];
             winEffect.Play();
-            winEffect.GetComponent<RestartLevel>().StartReset();
+            allowCharacterMovement = false;
+            countDownController.TriggerWin();
         }
     }
     bool CheckScore(Color c)

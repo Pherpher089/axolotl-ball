@@ -36,7 +36,7 @@ public class CharacterUserControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(PauseMenuController.isPaused) return;
+        if(PauseMenuController.isPaused || !GameController.Instance.allowCharacterMovement) return;
         //KeyboardInput();
         TouchInput();
         MouseInput();
