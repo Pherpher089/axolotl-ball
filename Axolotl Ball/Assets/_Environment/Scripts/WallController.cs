@@ -6,7 +6,7 @@ public class WallController : MonoBehaviour
 {
     public SpriteRenderer m_SpriteRenderer;
     public int m_ControllingPlayer = 0;
-
+    
     void Start()
     {
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
@@ -15,8 +15,9 @@ public class WallController : MonoBehaviour
     {
         if (other.collider.gameObject.tag == "Ball" && other.collider.gameObject.GetComponent<BallController>().m_ControllingPlayer != 0)
         {
-            //Color c = other.collider.gameObject.GetComponent<SpriteRenderer>().color;
-            //m_SpriteRenderer.color = c;
+            SoundManager.instance.PlayBallHitWall();
+            Color c = other.collider.gameObject.GetComponent<SpriteRenderer>().color;
+            m_SpriteRenderer.color = c;
         }
     }
 }

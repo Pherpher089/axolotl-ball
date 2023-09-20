@@ -33,6 +33,7 @@ public class BallController : MonoBehaviour
     {
         if (other.collider.gameObject.tag == "Player1" || other.collider.gameObject.tag == "Player2")
         {
+            SoundManager.instance.PlayPlayerHitBall();
             m_ControllingPlayer = other.collider.gameObject.GetComponent<CharacterUserControl>().m_PlayerNumber;
             Color c = other.collider.gameObject.GetComponent<SpriteRenderer>().color;
             m_SpriteRenderer.color = c;
