@@ -383,6 +383,7 @@
 "Assets/_GameControl/Scripts/PauseMenuController.cs"
 "Assets/_GameControl/Scripts/RestartLevel.cs"
 "Assets/_GameControl/Scripts/SoundManager.cs"
+"Assets/_GameControl/Scripts/StartCountDownController.cs"
 -langversion:9.0
 
 /deterministic

@@ -22,6 +22,7 @@ public class BallController : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (!GameController.Instance.allowCharacterMovement) rb.velocity = Vector3.zero;
         // Ensure the velocity's magnitude does not exceed the maximum speed
         if (rb.velocity.magnitude > maxSpeed || rb.velocity.magnitude < maxSpeed)
         {
