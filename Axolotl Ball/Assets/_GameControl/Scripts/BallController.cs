@@ -22,6 +22,7 @@ public class BallController : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (!GameController.Instance.allowCharacterMovement) rb.velocity = Vector3.zero;
         // Ensure the velocity's magnitude does not exceed the maximum speed
         if (rb.velocity.magnitude > maxSpeed || rb.velocity.magnitude < maxSpeed)
         {
@@ -33,6 +34,7 @@ public class BallController : MonoBehaviour
     {
         if (other.collider.gameObject.tag == "Player1" || other.collider.gameObject.tag == "Player2")
         {
+            SoundManager.instance.PlayPlayerHitBall();
             m_ControllingPlayer = other.collider.gameObject.GetComponent<CharacterUserControl>().m_PlayerNumber;
             Color c = other.collider.gameObject.GetComponent<SpriteRenderer>().color;
             m_SpriteRenderer.color = c;
