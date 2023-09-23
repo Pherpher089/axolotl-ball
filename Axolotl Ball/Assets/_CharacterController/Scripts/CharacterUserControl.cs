@@ -8,19 +8,16 @@ public class CharacterUserControl : MonoBehaviour
     [Range(1, 2)] public int m_PlayerNumber= 1;
 
     //mouse controls
-    private Camera mainCamera;
-    public float m_SpeedModifieTouch = 20f;
-    public float m_SpeedModifieMouse = 450f;
-    public float m_SpeedModifieAxis = 450f;
+    public float m_SpeedModifierTouch = 50f;
+    public float m_SpeedModifierMouse = 375f;
+    public float m_SpeedModifierAxis = 450f;
 
-    public BoxCollider2D courtBounds;
-    private float m_Acceleration = 10.0f; // Adjust this value for desired smoothness
-    Vector2 touchInput;
+    BoxCollider2D courtBounds;
+    public float m_Acceleration = 10.0f; // Adjust this value for desired smoothness
     private Touch? assignedTouch = null; // Remember the touch assigned to the player
     private bool startedMouseInBounds = false;
     void Awake()
     {
-        touchInput = Vector2.zero;
         tag += m_PlayerNumber.ToString();
     }
 
@@ -28,7 +25,6 @@ public class CharacterUserControl : MonoBehaviour
     void Start()
     {
         courtBounds = GameObject.FindGameObjectWithTag($"Player{m_PlayerNumber}Court").GetComponent<BoxCollider2D>();
-        mainCamera = Camera.main;
         m_RigidBody2D = GetComponent<Rigidbody2D>();
 
     }
@@ -39,20 +35,20 @@ public class CharacterUserControl : MonoBehaviour
         if(PauseMenuController.isPaused || !GameController.Instance.allowCharacterMovement) return;
         //KeyboardInput();
         TouchInput();
-        MouseInput();
+        if(GameController.Instance.allowMouseInput) MouseInput();
     }
 
     private void KeyboardInput()
     {
         Vector2 movementInput = new Vector2(Input.GetAxis(m_PlayerNumber.ToString() + "Horizontal"), Input.GetAxis(m_PlayerNumber.ToString() + "Vertical"));
-        Vector2 targetVelocity = movementInput * m_SpeedModifieAxis;
+        Vector2 targetVelocity = movementInput * m_SpeedModifierAxis;
 
         m_RigidBody2D.velocity = Vector2.Lerp(m_RigidBody2D.velocity, targetVelocity, m_Acceleration * Time.deltaTime);
     }
 
     public void MouseInput()
     {
-        Vector2 targetVelocity = GetMouseDragDirection() * m_SpeedModifieMouse;
+        Vector2 targetVelocity = GetMouseDragDirection() * m_SpeedModifierMouse;
         m_RigidBody2D.velocity = Vector2.Lerp(m_RigidBody2D.velocity, targetVelocity, m_Acceleration * Time.deltaTime);
     }
 
@@ -60,7 +56,7 @@ public class CharacterUserControl : MonoBehaviour
     {
         if (Input.touchCount > 0)
         {
-            Vector2 targetVelocity = GetTouchDragDirection() * m_SpeedModifieTouch;
+            Vector2 targetVelocity = GetTouchDragDirection() * m_SpeedModifierTouch;
             m_RigidBody2D.velocity = Vector2.Lerp(m_RigidBody2D.velocity, targetVelocity, m_Acceleration * Time.deltaTime);
         }
     }

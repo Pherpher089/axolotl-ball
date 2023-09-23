@@ -286,6 +286,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+          m_MethodName: PlayUISelectSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &865428621
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,8 +429,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quit Game
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f545bd8b7a85f4a4cbb7db26108c9bfa, type: 2}
+  m_sharedMaterial: {fileID: 3721598378638921905, guid: f545bd8b7a85f4a4cbb7db26108c9bfa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -743,6 +759,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+          m_MethodName: PlayUISelectSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1232177423
 GameObject:
   m_ObjectHideFlags: 0
@@ -919,8 +951,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Play
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f545bd8b7a85f4a4cbb7db26108c9bfa, type: 2}
+  m_sharedMaterial: {fileID: 3721598378638921905, guid: f545bd8b7a85f4a4cbb7db26108c9bfa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1029,7 +1061,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 181}
-  m_SizeDelta: {x: 323.2017, y: 54.4554}
+  m_SizeDelta: {x: 500, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1915974091
 MonoBehaviour:
@@ -1053,8 +1085,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Axolotl Ball
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f545bd8b7a85f4a4cbb7db26108c9bfa, type: 2}
+  m_sharedMaterial: {fileID: 3721598378638921905, guid: f545bd8b7a85f4a4cbb7db26108c9bfa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1078,15 +1110,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1143,6 +1175,7 @@ GameObject:
   - component: {fileID: 2089880261}
   - component: {fileID: 2089880260}
   - component: {fileID: 2089880266}
+  - component: {fileID: 2089880267}
   m_Layer: 0
   m_Name: MainMenuController
   m_TagString: Untagged
@@ -1456,10 +1489,23 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 91883fcdaa5a25948834e4fcf01b0103, type: 3}
   music:
   - {fileID: 8300000, guid: 4acc134d896471d44bfb5c208bc476e6, type: 3}
-  ballBouncePlayerSfx: []
-  ballBounceWallSfx: []
+  - {fileID: 8300000, guid: 2d88376f278d4c84fb59a25a8a659231, type: 3}
+  ballBouncePlayerSfx:
+  - {fileID: 8300000, guid: 054420eebe494ec48a21f666d309b889, type: 3}
+  - {fileID: 8300000, guid: 71cf9262c0142a04fad5ea62e9e70558, type: 3}
+  - {fileID: 8300000, guid: 0df2e53b2dcd6e141b6c040762cee64c, type: 3}
+  ballBounceWallSfx:
+  - {fileID: 8300000, guid: 8ed59275bf7c7b448979077792717dd9, type: 3}
+  - {fileID: 8300000, guid: 4474229dfdc3b85468f29aaae3f495a4, type: 3}
+  - {fileID: 8300000, guid: 811c7637b8e92df4492d53cc93ff9844, type: 3}
+  countSfx: {fileID: 8300000, guid: 3c9fa571729c12144b870341995f3b69, type: 3}
+  startSfx: {fileID: 0}
+  uiSelectSfx:
+  - {fileID: 8300000, guid: 5624ec70f34ca874f920566501541887, type: 3}
+  - {fileID: 8300000, guid: 5624ec70f34ca874f920566501541887, type: 3}
+  uiErrorSfx: {fileID: 8300000, guid: b5e02463edfc24d4a847fda1993f0b8d, type: 3}
   croudSfx: []
-  scoreSound: {fileID: 0}
+  scoreSound: {fileID: 8300000, guid: 2935215306b578b47964dce33bb466b8, type: 3}
 --- !u!114 &2089880264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1583,6 +1629,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2089880267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089880259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3c51eccf8d653b4faffc416723c4a9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdownTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  winScreenUI: {fileID: 0}
+  slowDownFactor: 0.5
+  delayBeforeWinScreen: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

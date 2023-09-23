@@ -59,6 +59,7 @@ public class StartCountDownController : MonoBehaviour
     {
         // Fade in
         float elapsed = 0f;
+        bool hasSounded = false;
         while (elapsed < duration / 2)
         {
             elapsed += Time.deltaTime;
@@ -66,13 +67,22 @@ public class StartCountDownController : MonoBehaviour
             color.a = Mathf.Lerp(0f, 1f, elapsed / (duration / 2));
             textElement.color = color;
             yield return null;
+            if(!hasSounded)
+            {
+                if (lastItem)
+                {
+                    SoundManager.instance.PlayStartSfx();
+                    OnCountdownComplete.Invoke();
+                }
+                else
+                {
+                    SoundManager.instance.PlayCountSfx();
+                }
+                hasSounded = true;
+            }
         }
 
         // Reset elapsed time for fade out
-        if (lastItem)
-        {
-            OnCountdownComplete.Invoke();
-        }
         elapsed = 0f;
         while (elapsed < duration / 2)
         {

@@ -18,6 +18,11 @@ public class WallController : MonoBehaviour
             SoundManager.instance.PlayBallHitWall();
             Color c = other.collider.gameObject.GetComponent<SpriteRenderer>().color;
             m_SpriteRenderer.color = c;
+
+            if (GameController.Instance.CheckScore(c))
+            {
+                GameController.Instance.Win(m_ControllingPlayer);
+            }
         }
     }
 }
