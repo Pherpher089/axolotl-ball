@@ -13,6 +13,10 @@ public class SoundManager : MonoBehaviour
     public AudioClip[] music;
     public AudioClip[] ballBouncePlayerSfx;
     public AudioClip[] ballBounceWallSfx;
+    public AudioClip countSfx;
+    public AudioClip startSfx;
+    public AudioClip[] uiSelectSfx;
+    public AudioClip uiErrorSfx;
 
     public AudioClip[] croudSfx;
     public AudioClip scoreSound;
@@ -35,6 +39,38 @@ public class SoundManager : MonoBehaviour
         // Play the audio clip
         sfxSource.Play();
     }
+    public void PlayUISelectSound()
+    {
+        // Assign the selected audio clip to the audio source
+        int randomIndex = Random.Range(0, uiSelectSfx.Length);
+        // Assign the selected audio clip to the audio source
+        sfxSource.clip = uiSelectSfx[randomIndex];        // Play the audio clip
+        sfxSource.Play();
+    }
+    public void PlayUIErrorSound()
+    {
+        // Assign the selected audio clip to the audio source
+        sfxSource.clip = uiErrorSfx;
+        // Play the audio clip
+        sfxSource.Play();
+    }
+
+    public void PlayCountSfx()
+    {
+        // Assign the selected audio clip to the audio source
+        sfxSource.clip = countSfx;
+
+        // Play the audio clip
+        sfxSource.Play();
+    }
+
+    public void PlayStartSfx()
+    {
+        // Assign the selected audio clip to the audio source
+        sfxSource.clip = startSfx;
+        // Play the audio clip
+        sfxSource.Play();
+    }
 
     public void PlayMusic(int songIndex, bool loop = false)
     {
@@ -53,9 +89,9 @@ public class SoundManager : MonoBehaviour
     {
         int randomIndex = Random.Range(0, ballBouncePlayerSfx.Length);
         // Assign the selected audio clip to the audio source
-        sfxSource.clip =  ballBouncePlayerSfx[randomIndex];
+        sfxSource2.clip =  ballBouncePlayerSfx[randomIndex];
         // Play the audio clip
-        sfxSource.Play();
+        sfxSource2.Play();
     }
 
     public void PlayBallHitWall()
@@ -70,7 +106,26 @@ public class SoundManager : MonoBehaviour
     public void PlayScoreSound()
     {
         sfxSource2.clip = scoreSound;
+        sfxSource.clip = croudSfx[1];
         // Play the audio clip
         sfxSource2.Play();
+        sfxSource.Play();
+
+    }
+
+    public void PlayAmbientCrowd()
+    {
+        ambianceSouce.clip = croudSfx[0];
+        // Play the audio clip
+        ambianceSouce.volume = 0.75f;
+        ambianceSouce.loop = true;
+        ambianceSouce.Play();
+    }
+    public void PlayWinSound()
+    {
+        sfxSource.clip = croudSfx[2];
+        // Play the audio clip
+        sfxSource.Play();
+
     }
 }
