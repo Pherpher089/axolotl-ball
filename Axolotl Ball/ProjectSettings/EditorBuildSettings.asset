@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/_Scenes/MainMenu.unity
     guid: c8ead6bb79c30f84c846166e587c5008
   - enabled: 1
+    path: Assets/_Scenes/HowToWin.unity
+    guid: bedae024fd7f93b4483a08be97e1d8ea
+  - enabled: 1
     path: Assets/_Scenes/GameScene.unity
     guid: b238e27f9a0bb2147bcfb5af59ae6429
   m_configObjects: {}

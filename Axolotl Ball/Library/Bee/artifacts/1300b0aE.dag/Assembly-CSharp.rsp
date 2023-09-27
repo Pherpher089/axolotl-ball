@@ -379,6 +379,7 @@
 "Assets/_GameControl/Scripts/CameraShake.cs"
 "Assets/_GameControl/Scripts/GameController.cs"
 "Assets/_GameControl/Scripts/HoopControl.cs"
+"Assets/_GameControl/Scripts/HowToWinController.cs"
 "Assets/_GameControl/Scripts/MainMenuController.cs"
 "Assets/_GameControl/Scripts/PauseMenuController.cs"
 "Assets/_GameControl/Scripts/RestartLevel.cs"
