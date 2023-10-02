@@ -7,27 +7,31 @@ public class StartCountDownController : MonoBehaviour
 {
     public TMP_Text[] countdownTexts; // Assign these in the Inspector in the order: 3, 2, 1, Go!
     public GameObject winScreenUI;
+    public TMP_Text winnerText; // Assign these in the Inspector in the order: 3, 2, 1, Go!
+
     public delegate void CountdownCompleteDelegate();
     public event CountdownCompleteDelegate OnCountdownComplete;
     public float slowDownFactor = 0.5f;  // to slow down time to half-speed
     public float delayBeforeWinScreen = 2f;
+    public float zoomStop = 8;
+
     public void StartCountdown()
     {
         StartCoroutine(CountdownRoutine());
     }
 
-    public void TriggerWin()
+    public void TriggerWin(int winningPlayerNumber)
     {
         if (winScreenUI != null)
         {
-            StartCoroutine(WinSequence());
+            StartCoroutine(WinSequence(winningPlayerNumber));
         }
     }
     private IEnumerator CountdownRoutine()
     {
         // Disable player controls here
 
-        yield return ZoomIn(8f, 1.5f); // Zoom into a size of 3 over 1.5 seconds
+        yield return ZoomIn(zoomStop, 1.5f); // Zoom into a size of 3 over 1.5 seconds
         int c = 0;
         foreach (TMP_Text t in countdownTexts)
         {
@@ -72,6 +76,7 @@ public class StartCountDownController : MonoBehaviour
                 if (lastItem)
                 {
                     SoundManager.instance.PlayStartSfx();
+                    RoundTimer.Instance.StartTimer();
                     OnCountdownComplete.Invoke();
                 }
                 else
@@ -95,11 +100,18 @@ public class StartCountDownController : MonoBehaviour
 
         textElement.color = new Color(textElement.color.r, textElement.color.g, textElement.color.b, 0);
     }
-    private IEnumerator WinSequence()
+    private IEnumerator WinSequence(int winningPlayerNumber)
     {
         // Slow down time
         Time.timeScale = slowDownFactor;
-
+        if(winningPlayerNumber == 0)
+        {
+            winnerText.text = $"Tie!";
+        }
+        else
+        {
+            winnerText.text = $"Player {winningPlayerNumber} wins!";
+        }
         // Wait for a few seconds
         float timer = 0f;
         while (timer < delayBeforeWinScreen)
@@ -113,4 +125,6 @@ public class StartCountDownController : MonoBehaviour
         // Enable the win screen UI
         winScreenUI.SetActive(true);
     }
+
+
 }

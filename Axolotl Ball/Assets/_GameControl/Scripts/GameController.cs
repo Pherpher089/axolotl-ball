@@ -11,7 +11,6 @@ public class GameController : MonoBehaviour
     ParticleSystem winEffect;
     int hoopScore = 5;
     StartCountDownController countDownController;
-    [HideInInspector]
     public List<GameObject> blocks;
     [HideInInspector]
     public bool allowCharacterMovement = false;
@@ -25,6 +24,7 @@ public class GameController : MonoBehaviour
 
     public void Start()
     {
+        RoundTimer.Instance.TimerEnded += TimerEnded;
         countDownController.OnCountdownComplete += StartMatch;
         InitializeGame();
         SoundManager.instance.PlayAmbientCrowd();
@@ -32,6 +32,7 @@ public class GameController : MonoBehaviour
     }
     void OnDestroy()
     {
+        RoundTimer.Instance.TimerEnded -= TimerEnded;
         countDownController.OnCountdownComplete -= StartMatch;
     }
     public void StartMatch()
@@ -73,26 +74,71 @@ public class GameController : MonoBehaviour
             if (playerNumber > 0 && b.GetComponent<SpriteRenderer>().color != playerColors[playerNumber - 1] && _hoopScore >= 0)
             {
                 Debug.Log("Cecking color " + playerColors[playerNumber - 1]);
+                //Color c = b.GetComponent<SpriteRenderer>().color;
+                //if (c == GameController.Instance.playerColors[0] || c == GameController.Instance.playerColors[1])
+                //{
+                //    ScoreController.instance.SwapBlock(playerNumber);
+                //}
+                //else
+                //{
+                //    ScoreController.instance.AddBlock(playerNumber);
+                //}
+                ScoreController.instance.CheckBlockAndDrawColor();
                 b.GetComponent<SpriteRenderer>().color = playerColors[playerNumber - 1];
+                b.GetComponent<WallController>().m_ControllingPlayer = playerNumber;
                 _hoopScore--;
             }
         }
 
-        if (CheckScore(playerColors[playerNumber - 1]))
+        if (CheckBlocksForCompleteWin(playerColors[playerNumber - 1]))
         {
             Win(playerNumber);
         }
     }
+    public int ScoreGame()
+    {
+        int p1Score = 0, p2Score = 0;
+        foreach (GameObject block in blocks)
+        {
+            WallController wall = block.GetComponent<WallController>();
+            if (wall.m_ControllingPlayer == 0) continue;
+            if (wall.m_ControllingPlayer == 1)
+            {
+                p1Score++;
+            } else
+            {
+                p2Score++;
+            }
+        }
+        if (p1Score == 0 && p2Score == 0 || p1Score == p2Score)
+        {
+            return 0;
+        }
+        else if (p1Score > p2Score)
+        {
+            return 1;
+        }
+        else return 2;
+    }
 
+    public void TimerEnded()
+    {
+        Win(ScoreGame());
+    }
     public void Win(int playerNumber)
     {
-        winEffect.startColor = playerColors[playerNumber - 1];
+        if(playerNumber != 0)
+        {
+            winEffect.startColor = playerColors[playerNumber - 1];
+        }
         winEffect.Play();
         SoundManager.instance.PlayWinSound();
+        CameraShake.Instance.shakeDuration = 10f;
+        CameraShake.Instance.TriggerShake();
         allowCharacterMovement = false;
-        countDownController.TriggerWin();
+        countDownController.TriggerWin(playerNumber);
     }
-    public bool CheckScore(Color c)
+    public bool CheckBlocksForCompleteWin(Color c)
     {
         foreach (GameObject b in blocks)
         {
