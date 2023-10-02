@@ -59,7 +59,7 @@ public class PauseMenuController : MonoBehaviour
         if (Application.isPlaying)
         {
             isPaused = false;
-            SceneManager.LoadScene(currentScene.name);
+            SceneManager.LoadScene("GameScene");
         }
     }
 
@@ -76,7 +76,7 @@ public class PauseMenuController : MonoBehaviour
         if (Application.isPlaying)
         {
             //This assumes the main menu is the previous scene in the build index
-            SceneManager.LoadScene(currentScene.buildIndex - 1);
+            SceneManager.LoadScene(0);
         }
     }
     

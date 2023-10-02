@@ -17,9 +17,17 @@ public class WallController : MonoBehaviour
         {
             SoundManager.instance.PlayBallHitWall();
             Color c = other.collider.gameObject.GetComponent<SpriteRenderer>().color;
-            m_SpriteRenderer.color = c;
 
-            if (GameController.Instance.CheckScore(c))
+            if(c == m_SpriteRenderer.color)
+            {
+                Debug.Log("### here 0 " + c.ToString() + " " + m_SpriteRenderer.color.ToString());
+
+                return;
+            }
+            m_SpriteRenderer.color = c;
+            m_ControllingPlayer = other.collider.gameObject.GetComponent<BallController>().m_ControllingPlayer;
+            ScoreController.instance.CheckBlockAndDrawColor();
+            if (GameController.Instance.CheckBlocksForCompleteWin(c))
             {
                 GameController.Instance.Win(m_ControllingPlayer);
             }
