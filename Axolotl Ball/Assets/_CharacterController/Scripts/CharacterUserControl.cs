@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class CharacterUserControl : MonoBehaviour
 {
     private Rigidbody2D m_RigidBody2D;
+    private SpriteRenderer m_SpriteRenderer;
     [Range(1, 2)] public int m_PlayerNumber= 1;
 
     //mouse controls
@@ -16,6 +18,10 @@ public class CharacterUserControl : MonoBehaviour
     public float m_Acceleration = 10.0f; // Adjust this value for desired smoothness
     private Touch? assignedTouch = null; // Remember the touch assigned to the player
     private bool startedMouseInBounds = false;
+    public Color color = Color.white;
+
+    private float flipTimer = 0;
+    private const float baseFlipTime = 3.5f;
     void Awake()
     {
         tag += m_PlayerNumber.ToString();
@@ -24,6 +30,7 @@ public class CharacterUserControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_SpriteRenderer = GetComponent<SpriteRenderer>();
         courtBounds = GameObject.FindGameObjectWithTag($"Player{m_PlayerNumber}Court").GetComponent<BoxCollider2D>();
         m_RigidBody2D = GetComponent<Rigidbody2D>();
 
@@ -36,6 +43,44 @@ public class CharacterUserControl : MonoBehaviour
         //KeyboardInput();
         TouchInput();
         if(GameController.Instance.allowMouseInput) MouseInput();
+
+        RotateTowardVelocity();
+        HandleSpriteFlipping();
+
+    }
+
+    void HandleSpriteFlipping()
+    {
+        float velocityMagnitude = m_RigidBody2D.velocity.magnitude;
+
+        if (velocityMagnitude > 0.1f) // Small threshold to ensure we have some movement
+        {
+            float flipTime = baseFlipTime / velocityMagnitude; // Faster movement means faster flipping
+            flipTimer += Time.deltaTime;
+
+            if (Mathf.PingPong(flipTimer, flipTime) > flipTime / 2)
+            {
+                m_SpriteRenderer.flipX = true;
+            }
+            else
+            {
+                m_SpriteRenderer.flipX = false;
+            }
+        }
+        else
+        {
+            m_SpriteRenderer.flipX = false;
+            flipTimer = 0; // Reset the timer when stationary
+        }
+    }
+    void RotateTowardVelocity()
+    {
+        Vector2 v = m_RigidBody2D.velocity;
+        if (v.sqrMagnitude > 0.01f) // Small threshold to ensure we have some movement
+        {
+            float angle = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg - 90f;
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
     }
 
     private void KeyboardInput()

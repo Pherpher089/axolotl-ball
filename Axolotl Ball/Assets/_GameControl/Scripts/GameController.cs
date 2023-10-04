@@ -8,6 +8,9 @@ public class GameController : MonoBehaviour
     public static GameController Instance;
     GameObject player1, player2;
     public Color[] playerColors;
+    public Sprite[] blockSprites;
+    public Sprite[] ballSprites;
+    public Sprite[] characterSprites;
     ParticleSystem winEffect;
     int hoopScore = 5;
     StartCountDownController countDownController;
@@ -59,9 +62,11 @@ public class GameController : MonoBehaviour
         }
 
         player1 = GameObject.FindGameObjectWithTag("Player1");
-        player1.GetComponent<SpriteRenderer>().color = playerColors[0];
+        player1.GetComponent<SpriteRenderer>().sprite = characterSprites[0];
+        player1.GetComponent<CharacterUserControl>().color = playerColors[0];
         player2 = GameObject.FindGameObjectWithTag("Player2"); ;
-        player2.GetComponent<SpriteRenderer>().color = playerColors[1];
+        player2.GetComponent<SpriteRenderer>().sprite = characterSprites[1];
+        player2.GetComponent<CharacterUserControl>().color = playerColors[1];
 
     }
 
@@ -74,17 +79,9 @@ public class GameController : MonoBehaviour
             if (playerNumber > 0 && b.GetComponent<SpriteRenderer>().color != playerColors[playerNumber - 1] && _hoopScore >= 0)
             {
                 Debug.Log("Cecking color " + playerColors[playerNumber - 1]);
-                //Color c = b.GetComponent<SpriteRenderer>().color;
-                //if (c == GameController.Instance.playerColors[0] || c == GameController.Instance.playerColors[1])
-                //{
-                //    ScoreController.instance.SwapBlock(playerNumber);
-                //}
-                //else
-                //{
-                //    ScoreController.instance.AddBlock(playerNumber);
-                //}
                 ScoreController.instance.CheckBlockAndDrawColor();
-                b.GetComponent<SpriteRenderer>().color = playerColors[playerNumber - 1];
+                b.GetComponent<WallController>().color = playerColors[playerNumber - 1];
+                b.GetComponent<SpriteRenderer>().sprite = GameController.Instance.blockSprites[playerNumber];
                 b.GetComponent<WallController>().m_ControllingPlayer = playerNumber;
                 _hoopScore--;
             }

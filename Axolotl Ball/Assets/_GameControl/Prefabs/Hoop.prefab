@@ -61,7 +61,7 @@ Transform:
   m_GameObject: {fileID: 3658483995601639150}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.25, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -108,7 +108,7 @@ SpriteRenderer:
   m_SortingLayerID: -1728296363
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c499183d04177024795d4158bc8c2e71, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b3d4a10fc42869941a8f27320a2f05d7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -151,7 +151,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.5, y: 0.25}
+  m_Offset: {x: -0.5, y: 0}
   serializedVersion: 2
   m_Radius: 0.2
 --- !u!1 &5185335101720997602
@@ -274,7 +274,7 @@ Transform:
   m_GameObject: {fileID: 6776349884310286655}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.227, z: 0}
+  m_LocalPosition: {x: 0, y: -0.023000002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -321,7 +321,7 @@ SpriteRenderer:
   m_SortingLayerID: -1834570699
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 867d95a59e12e374989ebe3061438432, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fb58835947d2c6b40beffd8f831b465f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -364,18 +364,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.4, y: -0.25}
+  m_Offset: {x: 0.4, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.0472727, y: 0.46545455}
+    oldSize: {x: 1.0368055, y: 1.0416666}
     newSize: {x: 1.0472727, y: 0.46545455}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.15, y: 0.35}
+  m_Size: {x: 0.18, y: 0.35}
   m_EdgeRadius: 0
 --- !u!58 &1721535188505710285
 CircleCollider2D:
