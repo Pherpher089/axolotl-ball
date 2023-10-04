@@ -10,11 +10,12 @@ public class BallController : MonoBehaviour
     TrailRenderer m_TrailRenderer;
     public float maxSpeed = 5f; // Adjust the speed as needed
     private Rigidbody2D rb;
+    public Color color = Color.white;
     void Start()
     {
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
         m_TrailRenderer = GetComponent<TrailRenderer>();
-        m_SpriteRenderer.color = m_neutralBallColor;
+        color = m_neutralBallColor;
         m_TrailRenderer.material.color = m_neutralBallColor;
         rb = GetComponent<Rigidbody2D>();
 
@@ -34,18 +35,20 @@ public class BallController : MonoBehaviour
     {
         if (other.collider.gameObject.tag == "Player1" || other.collider.gameObject.tag == "Player2")
         {
+            CharacterUserControl player = other.collider.gameObject.GetComponent<CharacterUserControl>();
             SoundManager.instance.PlayPlayerHitBall();
-            m_ControllingPlayer = other.collider.gameObject.GetComponent<CharacterUserControl>().m_PlayerNumber;
-            Color c = other.collider.gameObject.GetComponent<SpriteRenderer>().color;
-            m_SpriteRenderer.color = c;
+            m_ControllingPlayer = player.m_PlayerNumber;
+            Color c = player.color;
+            color = c;
+            m_SpriteRenderer.sprite = GameController.Instance.ballSprites[m_ControllingPlayer];
             m_TrailRenderer.material.color = c;
         }
     }
 
     public void SetBallNatural()
     {
-        m_SpriteRenderer.color = m_neutralBallColor;
-        m_TrailRenderer.material.color = m_neutralBallColor;
+        m_SpriteRenderer.sprite = GameController.Instance.ballSprites[0];
+        color = m_neutralBallColor;
         m_ControllingPlayer = 0;
     }
 }
