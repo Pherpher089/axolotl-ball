@@ -6,40 +6,17 @@ using UnityEngine;
 public class ScoreController : MonoBehaviour
 {
     public static ScoreController instance;
-    public GameObject blockPrefab; // Assign your block prefab here
-    public int numberOfBlocks = 34;
-    public float radius = 1.5f;
-    public List<SpriteRenderer> scoreBlocks;
+    public GameObject[] pinkBlocks;
+    public GameObject[] blueBlocks;
+    public GameObject[] nutralBlocks;
+    int numberOfBlocks = 34;
+
     Color blankBlockColor;
 
     private void Start()
     {
         instance = this;
-        ScoreController.instance = this;
-        float angularDifference = 360f / numberOfBlocks;
-        GameObject[] blocks = new GameObject[numberOfBlocks];
-        for (int i = 0; i < numberOfBlocks; i++)
-        {
-            float offsetAngle = angularDifference / 2f;
 
-            float x = radius * Mathf.Cos((i * angularDifference + offsetAngle) * Mathf.Deg2Rad);
-            float y = radius * Mathf.Sin((i * angularDifference + offsetAngle) * Mathf.Deg2Rad);
-
-
-            GameObject block = Instantiate(blockPrefab, new Vector3(x, y, 0), Quaternion.Euler(0, 0, i * angularDifference));
-            if (i == 0)
-            {
-                blankBlockColor = block.GetComponent<SpriteRenderer>().color;
-            }
-            block.transform.SetParent(transform); // Make the new block a child of the current object for organization
-            blocks[i] = block;
-        }
-        scoreBlocks = new List<SpriteRenderer>();
-        for (int i = 0; i < numberOfBlocks; i++)
-        {
-            if (i == 0) blankBlockColor = blocks[i].GetComponent<SpriteRenderer>().color;
-            scoreBlocks.Add(blocks[i].GetComponent<SpriteRenderer>());
-        }
     }
 
     public void CheckBlockAndDrawColor()
@@ -59,14 +36,19 @@ public class ScoreController : MonoBehaviour
         {
             if(i < p1)
             {
-                scoreBlocks[i].color = GameController.Instance.playerColors[0];
+                pinkBlocks[i].SetActive(true);
+                blueBlocks[i].SetActive(false);
+                nutralBlocks[i].SetActive(false);
             } else if(numberOfBlocks - i <= p2)
             {
-                scoreBlocks[i].color = GameController.Instance.playerColors[1];
+                pinkBlocks[i].SetActive(false);
+                blueBlocks[i].SetActive(true);
+                nutralBlocks[i].SetActive(false);
             } else
             {
-                scoreBlocks[i].color = blankBlockColor;
-
+                pinkBlocks[i].SetActive(false);
+                blueBlocks[i].SetActive(false);
+                nutralBlocks[i].SetActive(true);
             }
         }
     }
